@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu SYSTEM "menu.dtd">
+<menu>
+  <item id="i1">
+    <name>Beetroot and Feta Salad</name>
+    <description>Suitable for vegetarians, made with fresh beetroot.</description>
+    <price>$15.00</price>
+    <image>beetroot_salad.jpg</image>
+  </item>
+  <item id="i2">
+    <name>Sourdough Rye Sandwich</name>
+    <description>Cheese and salad sandwich made with organic, sourdough rye bread.</description>
+    <price>$18.00</price>
+    <image>rye_sandwich.jpg</image>
+  </item>
+  <item id="i3">
+    <name>Spinach Pie and Salad</name>
+    <description>Tasty pie with salad.</description>
+    <price>$20.00</price>
+    <image>spinach_pie.jpg</image>
+  </item>
+  <item id="i4">
+    <name>Feta Pancakes with Salad</name>
+    <description>Tasty pancake filled with feta and salad.</description>
+    <price>$19.50</price>
+    <image>feta_pancakes.jpg</image>
+  </item>
+  <item id="i5">
+    <name>Coffee - Small</name>
+    <description>For coffee, please inform the staff of the coffee type.</description>
+    <price>$3.50</price>
+    <image>coffee_small.jpg</image>
+  </item>
+  <item id="i6">
+    <name>Coffee - Regular</name>
+    <description>For coffee, please inform the staff of the coffee type.</description>
+    <price>$4.00</price>
+    <image>coffee_regular.jpg</image>
+  </item>
+  <item id="i7">
+    <name>Coffee - Large</name>
+    <description>For coffee, please inform the staff of the coffee type.</description>
+    <price>$4.50</price>
+    <image>coffee_large.jpg</image>
+  </item>
+  <item id="i8">
+    <name>Soda</name>
+    <description>Refreshing cold soda.</description>
+    <price>$3.00</price>
+    <image>soda.jpg</image>
+  </item>
+  <item id="i9">
+    <name>Fresh Juice</name>
+    <description>Freshly squeezed juice.</description>
+    <price>$6.00</price>
+    <image>fresh_juice.jpg</image>
+  </item>
+  <item id="i10">
+    <name>Bottled Water</name>
+    <description>Cold bottled water.</description>
+    <price>$2.00</price>
+    <image>water.jpg</image>
+  </item>
+</menu>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bryan's Cafe - Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Bryan's Cafe</a>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="contact-wrapper">
+
+      <!-- Enquiry Form -->
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <div class="name-row">
+          <div>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" placeholder="First name">
+          </div>
+          <div>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" placeholder="Last name">
+          </div>
+        </div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="your@email.com">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" placeholder="Message subject">
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message here..."></textarea>
+        <button onclick="submitForm()">Submit</button>
+      </div>
+
+      <!-- Branch Locations -->
+      <div class="branches">
+        <h2>Our Locations</h2>
+        <div id="branches-container">
+          <p>Loading branch information...</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>&#169; <span id="year"></span> Bryan's Cafe</span>
+    <a href="privacy.html" target="_blank">Privacy Policy</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Form submit
+    function submitForm() {
+      var firstname = document.getElementById("firstname").value.trim();
+      var lastname = document.getElementById("lastname").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var subject = document.getElementById("subject").value.trim();
+      var message = document.getElementById("message").value.trim();
+
+      if (!firstname || !lastname || !email || !subject || !message) {
+        alert("Please fill in all fields before submitting.");
+        return;
+      }
+
+      alert("Thank you " + firstname + "! Your message has been sent.");
+      document.getElementById("firstname").value = "";
+      document.getElementById("lastname").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("subject").value = "";
+      document.getElementById("message").value = "";
+    }
+
+    // Load branches from branches.xml
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "branches.xml", true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        var xml = xhr.responseXML;
+        var branches = xml.getElementsByTagName("branch");
+        var container = document.getElementById("branches-container");
+        container.innerHTML = "";
+
+        for (var i = 0; i < branches.length; i++) {
+          var name = branches[i].getElementsByTagName("name")[0].textContent;
+          var address = branches[i].getElementsByTagName("address")[0].textContent;
+          var phone = branches[i].getElementsByTagName("phone")[0].textContent;
+          var hours = branches[i].getElementsByTagName("hours")[0].textContent;
+          var map = branches[i].getElementsByTagName("map")[0].textContent;
+
+          var card = document.createElement("div");
+          card.className = "branch-card";
+          card.innerHTML =
+            "<h3>" + name + "</h3>" +
+            "<p><strong>Address:</strong> " + address + "</p>" +
+            "<p><strong>Phone:</strong> " + phone + "</p>" +
+            "<p><strong>Hours:</strong> " + hours + "</p>" +
+            "<a href='" + map + "' target='_blank'>View on Google Maps</a>";
+
+          container.appendChild(card);
+        }
+      }
+    };
+    xhr.send();
+  </script>
+
+</body>
+</html>

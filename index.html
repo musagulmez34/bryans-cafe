@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bryan's Cafe - About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Bryan's Cafe</a>
+    <ul>
+      <li><a href="index.html" class="active">About</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="banner">
+      <h1>Welcome to Bryan's Cafe</h1>
+      <p>Great food, great coffee, great people.</p>
+    </div>
+
+    <div class="section">
+      <img src="images/about.jpg" alt="About Bryan's Cafe">
+      <div class="section-text">
+        <h2>About Us</h2>
+        <p>Bryan's Cafe is a family-owned cafe that has been serving the Sydney community since 2005. We are passionate about providing fresh, high-quality food and beverages in a warm and welcoming environment. Our menu is inspired by seasonal produce and classic cafe favourites.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-text">
+        <h2>Our History</h2>
+        <p>Bryan's Cafe was founded by Bryan Mitchell in 2005 with a simple goal: to create a place where people could enjoy great food and feel at home. Starting with a single location in Surry Hills, Sydney, Bryan's Cafe has grown to three locations across Sydney NSW. Our commitment to quality and community remains at the heart of everything we do.</p>
+      </div>
+      <img src="images/history.jpg" alt="Our History">
+    </div>
+
+  </main>
+
+  <footer>
+    <span>&#169; <span id="year"></span> Bryan's Cafe</span>
+    <a href="privacy.html" target="_blank">Privacy Policy</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
